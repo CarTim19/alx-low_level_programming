@@ -1,30 +1,25 @@
 #include "main.h"
-
 /**
- * print_diagonal - draws a diagonal line on the terminal
- * @n: number of times the character \ should be printed
+ * leet - encode into 1337speak
+ * @n: input value
+ * Return: n value
  */
-
-void print_diagonal(int n)
+char *leet(char *n)
 {
-	if (n <= 0)
-	{
-		_putchar('\n');
-	} else
-	{
-		int i, j;
+	int i, j;
+	char s1[] = "aAeEoOtTlL";
+	char s2[] = "4433007711";
 
-		for (i = 0; i < n; i++)
+	for (i = 0; n[i] != '\0'; i++)
+	{
+		for (j = 0; j < 10; j++)
 		{
-			for (j = 0; j < n; j++)
+			if (n[i] == s1[j])
 			{
-				if (j == i)
-					_putchar('\\');
-				else if (j < i)
-					_putchar(' ');
+				n[i] = s2[j];
 			}
-			_putchar('\n');
 		}
 	}
+	return (n);
 }
 
